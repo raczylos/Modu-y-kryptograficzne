@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './styles/Navbar.css'
 
 function Navbar() {
     return (
         <div>
-            <Link to="/railfence">Rail fence</Link>
-            <Link to="/macierzoweA">Przestawienia macierzowe A</Link>
-            <Link to="/macierzoweB">Przestawienia macierzowe B</Link>
-            <Link to="/macierzoweC">Przestawienia macierzowe C</Link>
-            <Link to="/cezar">Szyfr Cezara</Link>
-            <Link to="/vigenere">Szyfrowanie Vigenere'a</Link>
+            <NavLink className={({ isActive }) => isActive ? 'active' : '' } to="/railfence">Rail fence</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : '' } to="/macierzoweA">Przestawienia macierzowe A</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : '' } to="/macierzoweB">Przestawienia macierzowe B</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : '' } to="/macierzoweC">Przestawienia macierzowe C</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : '' } to="/cezar">Szyfr Cezara</NavLink>
+            <NavLink className={({ isActive }) => isActive ? 'active' : '' } to="/vigenere">Szyfrowanie Vigenere'a</NavLink>
         </div>
     )
 }
