@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './Navbar';
 import { Routes, Route } from 'react-router-dom'
+import Vigenere from './Vigenere';
 
 function Home() {
     return (
@@ -13,7 +14,7 @@ function Home() {
                 <Route path="/macierzoweB" element={<div />}></Route>
                 <Route path="/macierzoweC" element={<div />}></Route>
                 <Route path="/cezar" element={<div />}></Route>
-                <Route path="/vigenere" element={<div />}></Route>
+                <Route path="/vigenere" element={<Vigenere />}></Route>
             </Routes>
         </div>
     )
