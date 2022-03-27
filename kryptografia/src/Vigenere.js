@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './styles/Vigenere.css'
 function Vigenere() {
     const [input, setInput] = useState('')
-    const [key, setKey] = useState('')
+    const [key, setKey] = useState('abba')
     const [encoded, setEncoded] = useState('')
     const [isDecipher, setIsDecipher] = useState(false)
     
@@ -50,7 +50,7 @@ function Vigenere() {
             <label>Tekst</label>
             <input type="text" onChange={(e) => {setInput(e.target.value)}}></input>
             <label>Klucz</label>
-            <input type="text" onChange={(e) => {setKey(e.target.value)}}></input>
+            <input type="text" value={key} onChange={(e) => {setKey(e.target.value)}}></input>
             <button onClick={() => {vigCipher(input, key)}}>Zaszyfruj</button>
             <label>Wynik</label>
             <textarea disabled id="encoded-text" placeholder="zakodowany tekst" value={encoded}></textarea>
