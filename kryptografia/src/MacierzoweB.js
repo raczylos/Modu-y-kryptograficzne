@@ -94,7 +94,7 @@ function MacierzoweB() {
 		for (let i = 0; i < arrayHeigh; i++) {
 			let arrPom = [];
 			for (let j = 0; j < arrayLength; j++) {
-				if (encoded[order.indexOf(j)][i] != undefined) {
+				if (encoded[order.indexOf(j)][i] !== undefined) {
 					arrPom.push(encoded[order.indexOf(j)][i]);
 				}
 			}
@@ -121,7 +121,7 @@ function MacierzoweB() {
 			<button onClick={matrixDecrypt}>Deszyfruj</button>
 			<p>Wiadomość zaszyfrowana</p>
 			<input value={encoded} />
-			<p>Wiadomość oddeszyfrowana</p>
+			<p>Wiadomość odszyfrowana</p>
 			<input value={decipher} />
 		</div>
 	);

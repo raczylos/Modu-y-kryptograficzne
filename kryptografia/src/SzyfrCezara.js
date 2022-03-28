@@ -55,6 +55,7 @@ function SzyfrCezara() {
 	return (
 		<div>
 			<input
+				type="number"
 				placeholder="Podaj klucz"
 				onChange={(e) => setKey(e.target.value)}
 			/>
@@ -66,7 +67,7 @@ function SzyfrCezara() {
 			<button onClick={decode}>Deszyfruj</button>
 			<p>Wiadomość zaszyfrowana</p>
 			<input value={encoded} />
-			<p>Wiadomość oddeszyfrowana</p>
+			<p>Wiadomość odszyfrowana</p>
 			<input value={decipher} />
 		</div>
 	);
