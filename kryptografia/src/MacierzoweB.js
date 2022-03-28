@@ -14,27 +14,21 @@ function MacierzoweB() {
 		for (let letter of sortedKey) {
 			sortedObj[letter] = true;
 		}
-		// let order = {}
 		let orderArr = [];
 		let count = 0;
 		for (let letter in sortedObj) {
 			for (let i = 0; i < splitKey.length; i++) {
 				if (splitKey[i] === letter) {
-					// orderArr[i] = count
 					orderArr[count] = i;
-					// order[count] = letter
 					count++;
 				}
 			}
 		}
-
-		// return order
 		return orderArr;
 	};
 
 	const matrixEncrypt = () => {
 		let order = setOrderOfLettersInKey();
-
 		let messageWithoutWhiteSpace = secretMessage
 			.replace(/\s/g, "")
 			.split("");
@@ -45,7 +39,6 @@ function MacierzoweB() {
 		);
 
 		let array = [];
-
 		let index = 0;
 
 		for (let i = 0; i < arrayHeigh; i++) {
@@ -71,9 +64,7 @@ function MacierzoweB() {
 			encodedString.push(encodedChar.join(""));
 			encodedChar.length = 0;
 		}
-
 		console.log(encodedString);
-
 		setEncoded(encodedString);
 
 		return encodedString;
@@ -84,11 +75,8 @@ function MacierzoweB() {
 
 		let keyWithoutWhiteSpace = key.replace(/\s/g, "").split("");
 		let arrayLength = keyWithoutWhiteSpace.length;
-
 		let encodedArr = encoded.join("");
-
 		let arrayHeigh = Math.ceil(encodedArr.length / arrayLength);
-
 		let array = [];
 
 		for (let i = 0; i < arrayHeigh; i++) {

@@ -6,21 +6,20 @@ function SzyfrCezara() {
 	const [encoded, setEncoded] = useState();
 	const [decipher, setDecipher] = useState();
 
+	const alphabet = "abcdefghijklmnopqrstuvwxyz";
+	let shiftedAlphabet = "";
+
+	for (let i = 0; i < alphabet.length; i++) {
+		let offset = (i + parseInt(key)) % alphabet.length;
+		
+		shiftedAlphabet += alphabet[offset];
+	}
+
+
 	const encode = () => {
-		let alphabet = "abcdefghijklmnopqrstuvwxyz";
-		let shiftedAlphabet = "";
-
-
-		for (let i = 0; i < alphabet.length; i++) {
-			let offset = (i + parseInt(key)) % alphabet.length;
-            
-			shiftedAlphabet += alphabet[offset];
-		}
 
 		let result = "";
-		let messageLowerCase;
-		messageLowerCase = secretMessage.toLowerCase();
-        
+		let messageLowerCase = secretMessage.toLowerCase();
         console.log(shiftedAlphabet)
 
 		for (let i = 0; i < secretMessage.length; i++) {
@@ -32,20 +31,12 @@ function SzyfrCezara() {
 	};
 
 	const decode = () => {
-		let alphabet = "abcdefghijklmnopqrstuvwxyz";
-		let shiftedAlphabet = "";
-
-		for (let i = 0; i < alphabet.length; i++) {
-			let offset = (i + parseInt(key)) % alphabet.length;
-			shiftedAlphabet += alphabet[offset];
-		}
-        
+		
 		let result = "";
 		let messageLowerCase = encoded.toLowerCase();
        
 		for (let i = 0; i < encoded.length; i++) {
-			let index = shiftedAlphabet.indexOf(messageLowerCase[i]);
-			result += alphabet[index];
+			result += alphabet[shiftedAlphabet.indexOf(messageLowerCase[i])];
 		}
 		console.log(result);
 		setDecipher(result);
